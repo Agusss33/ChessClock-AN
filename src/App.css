@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap');
+
+#root {
+  text-align: center;
+}
+*{
+  user-select: none;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.10px;
+}
+/* main styles */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+.left {
+    left: 0;
+    margin: 0;
+    background-color: white;
+    color: black;
+    font-family: "Roboto";
+    text-align: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 117px;
+  }
+  
+.right {
+    right: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: "Roboto";
+    text-align: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 117px;
+  }
+  
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+.btn {
+    background: #012173;
+    border-radius: 50%;
+    font-size: 15px;
+    width: 90px;
+    height: 90px;
+    color: white;
+    margin-left: 10px;
+    text-align: center;
+    border: none;
+  }
+.hidden {
+    display: none;
+  }
+  
+.split2 {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      z-index: 1;
+      top: 60%;
+  }
+
+  /* modal settings */
+.settings-modal {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+  justify-content: center;
+  align-items: center;
+}
+
+
+.settings-modal form {
+  background-color: white;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.settings-modal label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.settings-modal input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.settings-modal button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.settings-modal button:hover {
+  background-color: #0056b3;
+}
+
+.settings-modal .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+label{
+  font-size: 20px;
+  font-weight: 1000;
+}
+
+h6{
+  margin: 0;
+  margin-top: 2px;
+  padding: 0;
+  font-weight: 100;
+}
+
+/* media screen querys */
+
+@media  screen and (max-width : 600px) {
+  .left{
+    width: 100%;
+    height: -50%;
+    top: 30%;
+  }
+  .right{
+    height: +50%;
+    width: 100%;
+    align-items:end;
+  }
+  .buttons{
+    text-align: center;
+    align-items: center;
+  }
+  .btn{
+    width: 80px;
+    height: 80px;
+    border: none;
+  }
+  .split2{
+    top: 45%;
+    left: 0;
+  }
+ 
+ 
+}
+
+
+@media screen and(max-width :380px) {
+
+  .btn{
+    width: 30px;
+    height: 30px;
+    border: none;
+  }
+  
+}
