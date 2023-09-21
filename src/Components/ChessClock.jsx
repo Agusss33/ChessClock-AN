@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
   const [running1, setRunning1] = useState(false);
@@ -29,7 +30,12 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
     const isCountdown = m1 === 0 && s1 === 15;
     if (isCountdown) {
       setTimeout(() => {
-        alert("¡Quedan 15 segundos!");
+        Swal.fire({
+          text: "15 seconds left!",
+          timer: 1000,
+          showConfirmButton : false,
+          closeOnClickOutside: false
+          })
       });
     }
   };
@@ -48,7 +54,12 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
     const isCountdown = m2 === 0 && s2 === 15;
     if (isCountdown) {
       setTimeout(() => {
-        alert("¡Quedan 15 segundos!");
+        Swal.fire({
+          text: "15 seconds left!",
+          timer: 1000,
+          showConfirmButton : false,
+          closeOnClickOutside: false
+          })
       });
     }  
   };
@@ -191,8 +202,8 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
       )}
 
       <div className="hidden">
-        {gameOver && m1 === 0 && s1 === 0 && (alert("Black Wins!"))}
-        {gameOver && m2 === 0 && s2 === 0 && (alert("White Wins!"))}
+        {gameOver && m1 === 0 && s1 === 0 && (Swal.fire("Black Wins!")) && reset()}
+        {gameOver && m2 === 0 && s2 === 0 && (Swal.fire("White Wins!")) && reset()}
       </div>
     </div>
   );
