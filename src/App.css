@@ -66,8 +66,7 @@
   }
 .hidden {
     display: none;
-  }
-  
+  } 
 .split2 {
       width: 99%;
       display: flex;
@@ -177,17 +176,23 @@ h6{
     top: 45%;
     left: 0;
   }
- 
- 
-}
-
-
-@media screen and(max-width :380px) {
-
-  .btn{
-    width: 30px;
-    height: 30px;
-    border: none;
+  .right{
+    overflow-x:hidden;
+    overflow-y:hidden;
   }
-  
+ 
 }
+
+
+@media  screen and (max-width : 380px) {
+  .btn{
+    width: 59px;
+    height: 59px;
+  }
+  .split2{
+    top: 48%;
+    left: -1%;
+  }
+}
+
+

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 
-export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
+export const ChessClock = ({ min1 = "00", sec1 = "20", min2 = "00", sec2 = "20" }) => {
   const [running1, setRunning1] = useState(false);
   const [running2, setRunning2] = useState(false);
   const [gameOver, setGameOver] = useState(false);
@@ -11,8 +11,8 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
   const [newSec1, setNewSec1] = useState(sec1);
   const [newMin2, setNewMin2] = useState(min2);
   const [newSec2, setNewSec2] = useState(sec2);
-  const [increment1, setIncrement1] = useState(0);
-  const [increment2, setIncrement2] = useState(0);
+  const [increment1, setIncrement1] = useState("00");
+  const [increment2, setIncrement2] = useState("00");
   const [paused, setPaused] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
 
@@ -176,7 +176,8 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
               White Clock:
               <h6>Minutes</h6>
               <input
-                type="number"
+                type="text"
+                required pattern="[00-60]{2}"
                 maxLength={2}
                 value={newMin1}
                 onChange={(e) => setNewMin1(e.target.value)}
@@ -184,6 +185,7 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
               <h6>Seconds</h6>
               <input
                 type="text"
+                required pattern="[00-60]{2}"
                 maxLength={2}
                 value={newSec1}
                 onChange={(e) => setNewSec1(e.target.value)}
@@ -194,6 +196,7 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
               <h6>Minutes</h6>
               <input
                 type="text"
+                required pattern="[00-60]{2}"
                 maxLength={2}
                 value={newMin2}
                 onChange={(e) => setNewMin2(e.target.value)}
@@ -201,6 +204,7 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
               <h6>Seconds</h6>
               <input
                 type="text"
+                required pattern="[00-60]{2}"
                 maxLength={2}
                 value={newSec2}
                 onChange={(e) => setNewSec2(e.target.value)}
@@ -211,6 +215,7 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
               <h6>Seconds</h6>
               <input
                  type="text"
+                 required pattern="[00-60]{2}"
                   maxLength={2}
                   value={increment1}
                   onChange={(e) => setIncrement1(e.target.value)}
@@ -221,6 +226,7 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
               <h6>Seconds</h6>
               <input
                 type="text"
+                required pattern="[00-60]{2}"
                 maxLength={2}
                 value={increment2}
                 onChange={(e) => setIncrement2(e.target.value)}
