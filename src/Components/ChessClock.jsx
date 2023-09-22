@@ -92,12 +92,42 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
 
   return (
     <div className="chessClock">
-      <div className="split left">
+      <div className="split left" onClick={()=>{if (!running1 && !running2) {
+              setRunning1(true);
+              setRunning2(false);
+              setTime1([m1, s1 + increment1]);
+              setGameOver(false);
+            } else if (running1 && !running2) {
+              setRunning1(false);
+              setRunning2(true);
+              setTime2([m2, s2 + increment2]);
+              setGameOver(false);
+            } else if (!running1 && running2) {
+              setRunning1(true);
+              setRunning2(false);
+              setTime1([m1, s1 + increment1]);
+              setGameOver(false);
+            }}}>
         <div className="centered">
           <p>{`${m1.toString().padStart(2, "0")}:${s1.toString().padStart(2, "0")}`}</p>
         </div>
       </div>
-      <div className="split right">
+      <div className="split right" onClick={()=>{if (!running1 && !running2) {
+              setRunning1(true);
+              setRunning2(false);
+              setTime1([m1, s1 + increment1]);
+              setGameOver(false);
+            } else if (running1 && !running2) {
+              setRunning1(false);
+              setRunning2(true);
+              setTime2([m2, s2 + increment2]);
+              setGameOver(false);
+            } else if (!running1 && running2) {
+              setRunning1(true);
+              setRunning2(false);
+              setTime1([m1, s1 + increment1]);
+              setGameOver(false);
+            }}}>
         <div className="centered">
           <p>{`${m2.toString().padStart(2, "0")}:${s2.toString().padStart(2, "0")}`}</p>
         </div>
@@ -146,7 +176,7 @@ export const ChessClock = ({ min1 = 0, sec1 = 20, min2 = 0, sec2 = 20 }) => {
               White Clock:
               <h6>Minutes</h6>
               <input
-                type="text"
+                type="number"
                 maxLength={2}
                 value={newMin1}
                 onChange={(e) => setNewMin1(e.target.value)}
